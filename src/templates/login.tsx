@@ -1,16 +1,20 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Push, push } from 'connected-react-router';
+import {push } from 'connected-react-router';
+import { signInAction } from '../reducks/users/actions';
 
 
-const dispatch = useDispatch();
 
 
 const Login = () => {
+  const dispatch = useDispatch();
   return (
-    <div>
+    <div> 
       <h2>ログイン</h2>
-      <button onClick={()=>dispatch(push('/'))}>ログイン</button>
+      <button onClick={()=>{
+        dispatch(signInAction({uid:"0001",username:"test"}));
+        dispatch(push('/'))
+      }}>ログイン</button>
     </div>
   )
 }

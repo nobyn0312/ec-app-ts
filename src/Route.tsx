@@ -1,6 +1,6 @@
 import React from 'react'
 import {Switch,Route} from 'react-router'
-import Login from './templates/login'
+import Login from './templates/Login'
 import Home from './templates/Home'
 
 const Router =()=>{

@@ -4,6 +4,7 @@ import {legacy_createStore  as reduxCreateStore ,
         import { connectRouter , routerMiddleware } from 'connected-react-router';
 
 import { UsersReducer } from '../users/reducers'
+import thunk from 'redux-thunk';
 
 export default function createStore(history:any){
   return reduxCreateStore(
@@ -13,6 +14,7 @@ export default function createStore(history:any){
     }),
     applyMiddleware(
       routerMiddleware(history),
+      thunk
     )
 
   )
